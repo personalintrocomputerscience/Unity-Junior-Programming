@@ -30,5 +30,10 @@ public class PlayerController : MonoBehaviour
 
         moveInput = moveAction.ReadValue<Vector2>();
         transform.Translate(Vector3.right * moveInput.x * Time.deltaTime * speed);
+
+        if (fireAction.triggered)
+        {
+            Debug.Log("FIRED A PIZZA");
+        }
     }
 }
