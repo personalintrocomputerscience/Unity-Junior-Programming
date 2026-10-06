@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6038200517825040316}
   - component: {fileID: 870552884890014047}
   - component: {fileID: 771036962676268941}
+  - component: {fileID: -1183847181512242162}
   m_Layer: 0
   m_Name: Food_Pizza_01
   m_TagString: Untagged
@@ -104,3 +105,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveForward
   speed: 40
+--- !u!114 &-1183847181512242162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8319561101198725967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd574a9603c863f4fa51fcd737bcdefc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DestroyOutOfBounds
