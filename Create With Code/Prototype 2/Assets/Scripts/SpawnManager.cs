@@ -20,9 +20,11 @@ public class SpawnManager : MonoBehaviour
         if (spawnAction.triggered)
         {
             int animalIndex = Random.Range(0, animalPrefabs.Length);
+            // This generates the random position correctly
             Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 0, spawnPosZ);
 
-            Instantiate(animalPrefabs[animalIndex], new Vector3(0, 0, 20), animalPrefabs[animalIndex].transform.rotation);
+            // FIX: Pass spawnPos here instead of the hardcoded Vector3
+            Instantiate(animalPrefabs[animalIndex], spawnPos, animalPrefabs[animalIndex].transform.rotation);
         }
     }
 }
