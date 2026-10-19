@@ -18,6 +18,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(jumpAction.triggered)
+        {
+            playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+        }
     }
 }
