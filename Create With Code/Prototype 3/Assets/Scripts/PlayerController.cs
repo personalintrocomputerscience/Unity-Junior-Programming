@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     {
         if(jumpAction.triggered)
         {
-            playerRb.AddForce(Vector3.up * 10, ForceMode.Impulse);
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
     }
 }
