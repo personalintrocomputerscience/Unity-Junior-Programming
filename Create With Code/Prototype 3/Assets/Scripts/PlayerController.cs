@@ -34,7 +34,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        // FIX 1: Only restart the dirt particle if the game is NOT over
+        if (collision.gameObject.CompareTag("Ground") && !gameOver)
         {
             isOnGround = true;
             dirtParticle.Play();
@@ -44,9 +45,11 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Game Over");
             gameOver = true;
-            playerAnim.SetBool("Death_b", true); 
+            playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
             explosionParticle.Play();
+
+            dirtParticle.Stop();
         }
     }
 }
