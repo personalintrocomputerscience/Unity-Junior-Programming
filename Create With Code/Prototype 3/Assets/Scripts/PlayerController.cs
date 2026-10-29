@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     private Animator playerAnim;
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticle;
+    public AudioClip jumpSound;
+    public AudioClip crashSound;
 
     void Start()
     {
@@ -34,7 +36,6 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // FIX 1: Only restart the dirt particle if the game is NOT over
         if (collision.gameObject.CompareTag("Ground") && !gameOver)
         {
             isOnGround = true;
@@ -48,7 +49,6 @@ public class PlayerController : MonoBehaviour
             playerAnim.SetBool("Death_b", true);
             playerAnim.SetInteger("DeathType_int", 1);
             explosionParticle.Play();
-
             dirtParticle.Stop();
         }
     }
